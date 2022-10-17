@@ -1,20 +1,7 @@
-class Armstrong:
+num=int(input('enter the  number '))
+count=0
 
-    def __init__(self, num):
-        self.num = num
-    def count_of_digits(self):
-        res =0
-        if isinstance(self.num, int) is True:
-            res = len(str(self.num))
-
-        elif isinstance(self.num, str) is True:
-            res =len(self.num) 
-            self.num= int(self.num)
-
-            return res
-if __name__ =='__main__':
-    o = Armstrong('34567834567')
-    print(type(o.num))
-    print(o.count_of_digits())
-    print(type(o.num))
-                      
+for n in range (1, num+1):
+    if num%n==0:
+        count=count+1 
+        print(f' no of factors for{num} is {count}-')

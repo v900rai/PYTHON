@@ -1,29 +1,5 @@
-
-            
-class Base1:
-    college = 'RKGIT'
-
-    def college_name(self):
-        return self.college
-
-class Base2():
-    col = 'SVIT'
-
-    def college_name(self):
-        return self.col
-
-
-
-class Derived2(Base1, Base2):
-    pass
-
-obj = Derived2()
-print(obj.college_name())
-
-
-
-
-
-
-
-
+num = int(input('enter the number '))
+if num % 4==0:
+    print(f'{num} is divisible by 4 ')
+else:
+    print(f'{num} is divisible not by 4')

@@ -1,51 +1,34 @@
-# Define a class for Checking Armstrong number
+def main():
+    num = int(input('enter the number'))
+    is_armstrong(num)
 
-class Check :
+def is_armstrong(num):
+    if num == armstrong_0p(num):
+        print(f'{num} is an amstrong number')
 
-    # Constructor
-    def __init__(self,number) :
-        self.num = number
+    else:
+        print(f'{num} is not an amstrong number') 
+
+def armstrong_0p(num):
+    count_of_digit = count_number_of_digit(num)
+    res = 0
+    while num :
+        last_digit = num%10
+        res = sum((res, pow (last_digit, count_of_digit))) 
+        num = remove_last_digit(num)    
+        return res
+
+def count_number_of_digit(num):
+    count = 0
+    while num :
+        num = remove_last_digit(num)
+        count = sum((count, 1))
+        return count
         
-    # define a method for checking number is Armstrong or not 
-    def isArmstrong(self) :
+def remove_last_digit(num):
+    return num // 10
 
-        # copy num attribute to the temp variable
-        temp = self.num
-        res = 0
-
-        # run the loop untill temp is not equal to zero
-        while(temp != 0) :
-            
-            rem = temp % 10
-
-            res += rem ** 3
-
-            # integer division
-            temp //= 10
-
-        # check result equal to the num attribute or not
-        if self.num == res :
-            print(self.num,"is Armstrong")
-        else :
-            print(self.num,"is not Armstrong")
+main()            
 
 
-# Driver code 
-if __name__ == "__main__" :
-    
-    # input number
-    num = 6
-    
-    # make an object of Check class
-    check_Armstrong = Check(num)
-    
-    # check_Armstrong object's method call
-    check_Armstrong.isArmstrong()
-    
-    num = 127
-    check_Armstrong = Check(num)
-    check_Armstrong.isArmstrong()      
- #Output
 
- #153 is Armstrong
-#127 is not Armstrong
